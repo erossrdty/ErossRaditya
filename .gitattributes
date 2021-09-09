@@ -1,2 +1,88 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+import java.util.Scanner;
+public class soalsatu { 
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukan Angka :");
+        int angka = input.nextInt();
+        int a = 0;
+
+        for (int index=1; index<=angka; index++){
+        if (angka%index==0)
+        a=a+1; }
+        
+        if (a==2)
+        System.out.printf("Bilangan Prima");
+        else
+        System.out.printf("Bukan Bilangan Prima");
+    }
+}
+
+import java.util.Scanner;
+public class soaldua {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukan Angka :");
+        Integer angka = input.nextInt();
+
+        if (angka % 2 == 0) {
+        System.out.print(angka + " adalah bilangan genap");    
+        }
+        else {
+        System.out.print(angka + " adalah bilangan ganjil");
+        }
+    }
+}
+
+public class soaltiga {
+    public static void main(String[] args) {
+        int angka[] = {1, 8, 13, 17, 18, 19, 20};
+        int key = 18;
+        int index = angka.length / 2;
+        boolean n = false;
+        int tengah = index;
+
+        while (index >= 0 && index < angka.length && n == false) {
+            if (key == angka[index]) {
+                System.out.println("Data terdapat pada index ke-" + index);
+                n = true;
+            } else {
+                if (key < angka[tengah]) {
+                    index--;
+                } else {
+                    index++;
+                }
+            }
+        }
+        if (n == false) {
+            System.out.println("Data tidak ditemukan");
+        }
+    }
+}
+
+import java.util.Arrays;
+
+public class soalempat {
+    public static void main(String[] args) {
+        int[] knight = { 4, 3, 1, 2};
+        int[] dragon = { 7, 2 };
+        Arrays.sort(knight);
+        Arrays.sort(dragon);
+        int indeksDragon = 0;
+        int power = 0;
+        for (int x : knight) {
+            if (indeksDragon < dragon.length) {
+                if (x >= dragon[indeksDragon]) {
+                    power += x;
+                    indeksDragon++;
+                }
+            }
+        }
+        if (indeksDragon == dragon.length) {
+            System.out.println("Minimum Power : " + power);
+        } else {
+            System.out.println("Knight Fall");
+        }
+    }
+}
